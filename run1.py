@@ -120,20 +120,11 @@ elif app_mode =='Prediction':
         loaded_model = pickle.load(open('RF.sav', 'rb'))
         prediction = loaded_model.predict(single_sample)
         if prediction[0] == 0 :
-            st.error(
-    'According to our Calculations, you will not get the loan from Bank'
-    )
-            st.markdown(
-    f'<img src="data:image/gif;base64,{data_url_no}" alt="cat gif">',
-    unsafe_allow_html=True,)
+            st.error('According to our Calculations, you will not get the loan from Bank')
+            st.markdown(f'<img src="data:image/gif;base64,{data_url_no}" alt="cat gif">', unsafe_allow_html=True,)
         elif prediction[0] == 1 :
-            st.success(
-    'Congratulations!! you will get the loan from Bank'
-    )
-            st.markdown(
-    f'<img src="data:image/gif;base64,{data_url}" alt="cat gif">',
-    unsafe_allow_html=True,
-    )
+            st.success('Congratulations!! you will get the loan from Bank')
+            st.markdown(f'<img src="data:image/gif;base64,{data_url}" alt="cat gif">', unsafe_allow_html=True,)
 
 
 
